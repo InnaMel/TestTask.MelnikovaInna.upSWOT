@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "SBDb6+IVK1EVDdK6qTj4qcE6gVIeU3piXXi6hbKRb8AJP5uM0SJGHz3R8QqtcUX3cOXxbUlPVN3+O119i+Lsvg==",
+  "success": true,
+  "projectFilePath": "N:\\! MY IT\\Test upSWOT\\TestTask.MelnikovaInna.upSWOT\\TestTask.MelnikovaInna.upSWOT\\TestTask.MelnikovaInna.upSWOT.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Inna\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.17.0\\microsoft.visualstudio.azure.containers.tools.targets.1.17.0.nupkg.sha512"
+  ],
+  "logs": []
+}
