@@ -17,7 +17,7 @@ namespace RickAndMortyTests
             var service = new ApiController();
 
             var result = await service.GetCharacter(nameCharacter);
-            result.Value.FirstOrDefault().Name.Should().Be(nameCharacter);
+            result.Value.First().Name.Should().Be(nameCharacter);
             Assert.NotNull(result);
         }
 

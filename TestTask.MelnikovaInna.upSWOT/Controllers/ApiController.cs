@@ -125,11 +125,13 @@ namespace TestTask.MelnikovaInna.upSWOT.Controllers
 
             foreach (var character in searchResultByCharacter.Results)
             {
-                containResult = searchResultByEpisode
-                      .Results
-                      .FirstOrDefault()
-                      .Characters
-                      .Contains(character.Url);
+                foreach (var episide in searchResultByEpisode.Results)
+                {
+                    containResult = episide
+                          .Characters
+                          .Contains(character.Url);
+                    if (containResult) break;
+                }
                 if (containResult) break;
             }
 
