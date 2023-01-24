@@ -82,13 +82,13 @@ namespace TestTask.MelnikovaInna.upSWOT.Controllers
             var caller = new HttpClientCaller();
             var resultCharacter = await caller.GetAsync($"{RickAndMortyClient.PATHCHARACTER}?name={encodedCharacter}");
 
+
             var searchResultByCharacter = RickAndMortyClient.Deserialize<CharecterSearchResult>(resultCharacter);
 
             foreach (var character in searchResultByCharacter.Results)
             {
                 var resultResponseCharacter = new Person();
                 var originInfoCharacter = new PersonOrigin();
-                //caller = new HttpClientCaller();
                 if (!string.IsNullOrWhiteSpace(character.Origin.Url))
                 {
                     var resultOriginInfo = await caller.GetAsync(character.Origin.Url);

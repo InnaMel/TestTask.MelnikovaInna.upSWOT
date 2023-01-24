@@ -22,7 +22,7 @@ namespace RickAndMortyTests
         }
 
         [Theory]
-        [InlineData("")]
+        [InlineData("NotRick")]
         public async Task GetCharacterByEmptyName_ShouldBeErrorNotFoud(string nameCharacter)
         {
             var service = new ApiController();
