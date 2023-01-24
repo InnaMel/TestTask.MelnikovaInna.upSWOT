@@ -80,7 +80,7 @@ namespace TestTask.MelnikovaInna.upSWOT.Controllers
 
             var encodedCharacter = UrlEncoder.Default.Encode(characterName);
             var caller = new HttpClientCaller();
-            var resultCharacter = await caller.GetAsync(String.Concat(RickAndMortyClient.PATHCHARACTER, $"?name={encodedCharacter}"));
+            var resultCharacter = await caller.GetAsync($"{RickAndMortyClient.PATHCHARACTER}?name={encodedCharacter}");
 
             var searchResultByCharacter = RickAndMortyClient.Deserialize<CharecterSearchResult>(resultCharacter);
 
@@ -115,12 +115,12 @@ namespace TestTask.MelnikovaInna.upSWOT.Controllers
 
             var encodedEpisode = UrlEncoder.Default.Encode(request.EpisodeName);
             var caller = new HttpClientCaller();
-            var resultEpisode = await caller.GetAsync(String.Concat(RickAndMortyClient.PATHEPISODE, $"?name={encodedEpisode}"));
+            var resultEpisode = await caller.GetAsync($"{RickAndMortyClient.PATHEPISODE}?name={encodedEpisode}");
             var searchResultByEpisode = RickAndMortyClient.Deserialize<EpisodeSearchResult>(resultEpisode);
 
             var encodedCharacter = UrlEncoder.Default.Encode(request.PersonName);
             caller = new HttpClientCaller();
-            var resultCharacter = await caller.GetAsync(String.Concat(RickAndMortyClient.PATHCHARACTER, $"?name={encodedCharacter}"));
+            var resultCharacter = await caller.GetAsync($"{RickAndMortyClient.PATHCHARACTER}?name={encodedCharacter}");
             var searchResultByCharacter = RickAndMortyClient.Deserialize<CharecterSearchResult>(resultCharacter);
 
             foreach (var character in searchResultByCharacter.Results)
