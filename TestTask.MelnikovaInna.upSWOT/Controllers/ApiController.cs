@@ -88,13 +88,20 @@ namespace TestTask.MelnikovaInna.upSWOT.Controllers
             {
                 var resultResponseCharacter = new Person();
                 var originInfoCharacter = new PersonOrigin();
-                caller = new HttpClientCaller();
-                var resultOriginInfo = await caller.GetAsync(character.Origin.Url);
-                var searchResultOriginInfo = RickAndMortyClient.Deserialize<PersonOrigin>(resultOriginInfo);
+                //caller = new HttpClientCaller();
+                if (!string.IsNullOrWhiteSpace(character.Origin.Url))
+                {
+                    var resultOriginInfo = await caller.GetAsync(character.Origin.Url);
+                    var searchResultOriginInfo = RickAndMortyClient.Deserialize<PersonOrigin>(resultOriginInfo);
 
-                originInfoCharacter.Name = searchResultOriginInfo.Name;
-                originInfoCharacter.Type = searchResultOriginInfo.Type;
-                originInfoCharacter.Dimension = searchResultOriginInfo.Dimension;
+                    originInfoCharacter.Name = searchResultOriginInfo.Name;
+                    originInfoCharacter.Type = searchResultOriginInfo.Type;
+                    originInfoCharacter.Dimension = searchResultOriginInfo.Dimension;
+                }
+                else
+                {
+                    originInfoCharacter.Name = character.Origin.Name;
+                }
 
                 resultResponseCharacter.Name = character.Name;
                 resultResponseCharacter.Status = character.Status;
